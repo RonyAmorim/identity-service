@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:17.4
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: Senh4F0rTe
+      POSTGRES_DB: identity_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - identity_rede
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.1.4
+    container_name: keycloak
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+
+      KC_DB: postgres
+      KC_DB_URL: "jdbc:postgresql://postgres:5432/identity_db"
+      KC_DB_USERNAME: postgres_user
+      KC_DB_PASSWORD: Senh4F0rTe
+      KC_DB_SCHEMA: public
+
+    ports:
+      - "7001:8080"
+    command:
+      - start-dev
+      - --features=authorization,organization
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks:
+      - identity_rede
+
+volumes:
+  pgdata: {}
+
+networks:
+  identity_rede:
+    driver: bridge
