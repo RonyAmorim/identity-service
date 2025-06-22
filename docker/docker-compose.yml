@@ -17,21 +17,22 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.1.4
     container_name: keycloak
+    ports:
+      - "7001:8080"
+    volumes:
+      - ./export-do-realm:/opt/keycloak/data/import
     environment:
-      KC_BOOTSTRAP_ADMIN_USERNAME: admin
-      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-
       KC_DB: postgres
       KC_DB_URL: "jdbc:postgresql://postgres:5432/identity_db"
       KC_DB_USERNAME: postgres_user
       KC_DB_PASSWORD: Senh4F0rTe
       KC_DB_SCHEMA: public
-
-    ports:
-      - "7001:8080"
-    command:
-      - start-dev
-      - --features=authorization,organization
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        /opt/keycloak/bin/kc.sh import --dir /opt/keycloak/data/import --override true &&
+        exec /opt/keycloak/bin/kc.sh start-dev --features=authorization,organization
     depends_on:
       - postgres
     restart: unless-stopped

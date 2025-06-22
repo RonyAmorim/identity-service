@@ -1,0 +1,84 @@
+{
+  "realm" : "master",
+  "users" : [ {
+    "id" : "2173ab48-fc85-4f3b-8f45-1c1f229dae13",
+    "username" : "admin",
+    "emailVerified" : false,
+    "attributes" : {
+      "is_temporary_admin" : [ "true" ]
+    },
+    "createdTimestamp" : 1750446905281,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "4f5ec597-cafb-4393-9469-490ea0a01573",
+      "type" : "password",
+      "createdDate" : 1750446905664,
+      "secretData" : "{\"value\":\"v2CYFrp9zvqllhkf2lt0Huon4sCPNRzooqBsc+HZbQg=\",\"salt\":\"DqFkUI5b4n3A6+EnjTVglQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "admin", "default-roles-master" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "c1245942-cf0c-4a7e-851b-956a27b1e0f5",
+    "username" : "ronya",
+    "email" : "rony@teste.com",
+    "emailVerified" : false,
+    "createdTimestamp" : 1750512382678,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "939dfe9a-cb22-4499-93cb-e9bd6160b21e",
+      "type" : "password",
+      "createdDate" : 1750512382778,
+      "secretData" : "{\"value\":\"fRZCBes39Nqkgw5A4oPUfQtUKLKQhEF5+w50qXu3E9I=\",\"salt\":\"5kUUF92pH2ZsmRrA9tpJSw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-master" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "fad4225c-6888-4eb0-85e0-b02c115f3b8d",
+    "username" : "ronyamorimdosreis",
+    "email" : "rony@example.com",
+    "emailVerified" : false,
+    "createdTimestamp" : 1750515283962,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "c6954484-2e67-40d3-8e2a-389286047ee9",
+      "type" : "password",
+      "createdDate" : 1750515284025,
+      "secretData" : "{\"value\":\"En8H0xqA9lfciiX5ADvmfJo46MmoT/SrLPpe67JeevU=\",\"salt\":\"jSdRJyVi5YOV1BnsuAPxOw==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":5,\"algorithm\":\"argon2\",\"additionalParameters\":{\"hashLength\":[\"32\"],\"memory\":[\"7168\"],\"type\":[\"id\"],\"version\":[\"1.3\"],\"parallelism\":[\"1\"]}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-master" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "644faf10-d339-41c6-9a0c-3ff3b8ef3b8f",
+    "username" : "service-account-identity-admin",
+    "emailVerified" : false,
+    "createdTimestamp" : 1750511594177,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "identity-admin",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-master" ],
+    "clientRoles" : {
+      "master-realm" : [ "manage-users", "view-users", "query-users" ],
+      "account" : [ "manage-account", "delete-account", "view-profile" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}
